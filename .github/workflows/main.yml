@@ -15,8 +15,4 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "freedom-fighters-encyclopedia" #Must be unique in Heroku
           heroku_email: "${{secrets.HEROKU_EMAIL}}"
-          db_ffe: "${{secrets.DB}}"
-          name_ffe: "${{secrets.NAME}}"
           pass_ffe: "${{secrets.PASS}}"
-        - run: |
-            db_ffe=${{ secrets[env.db_ffe] }}
