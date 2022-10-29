@@ -1,0 +1,20 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akshara-a/Freedom-Fighter-s-Encyclopedia@v3.12.12 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "freedom-fighters-encyclopedia" #Must be unique in Heroku
+          heroku_email: "${{secrets.HEROKU_EMAIL}}"
+          db_ffe: "${{secrets.DB}}"
+          name_ffe: "${{secrets.NAME}}"
+          pass_ffe: "${{secrets.PASS}}"
